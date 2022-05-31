@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <p></p>
+      <a href="/entries/new">Create a new Entry</a>
+    </nav>
+    <main>
+      <h2>List of Entries</h2>
+      <ul>
+        <% for(let i = 0; i < entries.length; i++){ %>
+        <li>
+          <a href="/entries/<%= entries[i]._id %>"><%= entries[i].artist %></a>
+        </li>
+        <% } %>
+      </ul>
+    </main>
+  </body>
+</html>

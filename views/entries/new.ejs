@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Foggy Dog Music Blog</title>
+  </head>
+
+  <body>
+    <header></header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/entries">Entries Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <h1>Create an Entry</h1>
+      <form action="/entries" method="POST">
+        Artist: <br /><input type="text" name="artist" /><br />
+        Album: <br /><input type="text" name="album" /><br />
+        Cover: <br /><input type="url" name="img" /><br />
+        Year Released: <br /><input type="number" name="year" /><br />
+        Username: <br /><input type="text" name="user" /><br />
+        Comments: <br /><textarea name="comments"></textarea><br />
+        <input type="submit" value="Create Entry" /><br />
+      </form>
+    </main>
+  </body>
+</html>
