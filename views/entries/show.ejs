@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Foggy Dog Music Blog</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/entries">Entry Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1><%= entry.artist %> - "<%= entry.album %>"</h1>
+      <section>
+        <h2>Attributes:</h2>
+        <ul>
+          <li>Artist: <%= entry.artist %></li>
+        </ul>
+      </section>
+      <section>
+        <form action="/entries/<%= entry._id %>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete Entry" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

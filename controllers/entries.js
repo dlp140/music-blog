@@ -7,6 +7,7 @@ const router = express.Router();
 
 // Routes / Controllers
 
+// I
 router.get("/", (req, res) => {
   Entry.find({}, (error, allEntries) => {
     res.render("entries/index.ejs", {
@@ -15,14 +16,17 @@ router.get("/", (req, res) => {
   });
 });
 
-// I
-
 // N
 router.get("/new", (req, res) => {
   res.render("entries/new.ejs");
 });
 
 // D
+router.delete("/:id", (req, res) => {
+  Entry.findByIdAndRemove(req.params.id, () => {
+    res.redirect("/entries");
+  });
+});
 
 // U
 
@@ -36,10 +40,10 @@ router.post("/", (req, res) => {
 // E
 
 // S
-router.get("/", (req, res) => {
-  Entry.find({}, (err, Entries) => {
-    res.render("entries/index.ejs", {
-      entries: foundEntries,
+router.get("/:id", (req, res) => {
+  Entry.findById(req.params.id, (err, foundEntry) => {
+    res.render("entries/show.ejs", {
+      entry: foundEntry,
     });
   });
 });
