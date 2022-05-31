@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Express Blog</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Edit <%= entry.album %>'s Info</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/entries">Entry Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Album Attributes:</h2>
+      <form action="/entries/<%= entry._id %>?_method=PUT" method="POST">
+        <textarea
+          type="text"
+          name="comments"
+          value="<%= entry.comments %>"
+        ></textarea
+        ><br />
+        <input type="submit" value="Update Entry" />
+      </form>
+    </main>
+  </body>
+</html>

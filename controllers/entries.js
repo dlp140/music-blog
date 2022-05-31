@@ -29,6 +29,11 @@ router.delete("/:id", (req, res) => {
 });
 
 // U
+router.put("/:id", (req, res) => {
+  Entry.findByIdAndUpdate(req.params.id, req.body, () => {
+    res.redirect("/entries");
+  });
+});
 
 // C
 router.post("/", (req, res) => {
@@ -38,6 +43,13 @@ router.post("/", (req, res) => {
 });
 
 // E
+router.get("/:id/edit", (req, res) => {
+  Entry.findById(req.params.id, (err, foundEntry) => {
+    res.render("entries/edit.ejs", {
+      entry: foundEntry,
+    });
+  });
+});
 
 // S
 router.get("/:id", (req, res) => {
