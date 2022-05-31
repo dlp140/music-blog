@@ -2,24 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Foggy Dog Music Blog</title>
+    <title><%= entry.artist %>: <%= entry.album %></title>
+    <style>
+      img {
+        max-width: 300px;
+        max-height: auto;
+      }
+    </style>
   </head>
 
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/entries">Entry Index</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <header><%- include('../partials/nav.ejs') %></header>
     <main>
-      <h1><%= entry.artist %>'s - "<%= entry.album %>"</h1>
+      <h1>
+        <strong><%= entry.artist %></strong>
+      </h1>
+      <h2><em><%= entry.album %></em></h2>
+
       <section>
         <!-- <h2>Attributes:</h2> -->
         <img src="<%= entry.img %>" />
@@ -29,6 +28,7 @@
         <p>- <%= entry.user %></p>
       </section>
 
+      <% if(currentUser) {%>
       <section>
         <a href="/entries/<%= entry._id %>/edit">Edit</a>
       </section>
@@ -37,6 +37,7 @@
         <form action="/entries/<%= entry._id %>?_method=DELETE" method="POST">
           <input type="submit" value="Delete Entry" />
         </form>
+        <% } %>
       </section>
     </main>
   </body>

@@ -1,10 +1,10 @@
 // Dependencies
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
 require("dotenv").config();
+const mongoose = require("mongoose");
 const methodOverride = require("method-override");
-const entriesController = require("./controllers/entries");
+const session = require("express-session");
 
 // Database Connection
 mongoose.connect(process.env.DATABASE_URL, {
@@ -21,12 +21,28 @@ db.on("disconnected", () => console.log(`mongo disconnected`));
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-// Controllers
+// Routes / Controllers
+const entriesController = require("./controllers/entries");
 app.use("/entries", entriesController);
 
+const userController = require("./controllers/users");
+app.use("/users", userController);
+
+const sessionsController = require("./controllers/sessions");
+app.use("/sessions", sessionsController);
+
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {
+    currentUser: req.session.currentUser,
+  });
 });
 
 // Listener

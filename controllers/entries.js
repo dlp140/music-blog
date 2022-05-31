@@ -12,13 +12,16 @@ router.get("/", (req, res) => {
   Entry.find({}, (error, allEntries) => {
     res.render("entries/index.ejs", {
       entries: allEntries,
+      currentUser: req.session.currentUser,
     });
   });
 });
 
 // N
 router.get("/new", (req, res) => {
-  res.render("entries/new.ejs");
+  res.render("entries/new.ejs", {
+    currentUser: req.session.currentUser,
+  });
 });
 
 // D
@@ -47,6 +50,7 @@ router.get("/:id/edit", (req, res) => {
   Entry.findById(req.params.id, (err, foundEntry) => {
     res.render("entries/edit.ejs", {
       entry: foundEntry,
+      currentUser: req.session.currentUser,
     });
   });
 });
@@ -56,6 +60,7 @@ router.get("/:id", (req, res) => {
   Entry.findById(req.params.id, (err, foundEntry) => {
     res.render("entries/show.ejs", {
       entry: foundEntry,
+      currentUser: req.session.currentUser,
     });
   });
 });
