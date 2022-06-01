@@ -10,7 +10,7 @@ img:hover {
 }
 img.show {
   opacity: 100%;
-  margin: auto;
+  /* margin: auto; */
 }
 * {
   box-sizing: border-box;
@@ -72,4 +72,15 @@ h1.entries {
 }
 .editdelete {
   display: flex;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr;
+}
+#right {
+  margin-top: 130px;
+  /* margin: auto; */
+  text-align: justify;
+  margin-right: 10px;
 }
