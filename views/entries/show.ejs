@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <title><%= entry.artist %>: <%= entry.album %> (<%=entry.year%>)</title>
+
     <link rel="stylesheet" href="/public/css/style.css" />
   </head>
 
   <body>
     <header><%- include('../partials/nav.ejs') %></header>
-    <main>
+    <main class="show">
       <h1>
         <strong><%= entry.artist %></strong>
       </h1>
@@ -21,7 +22,11 @@
         <br />
         <p><%= entry.comments %></p>
         <br />
-        <p>- <%= entry.user %></p>
+        <p>
+          - <%= entry.user %> <br />
+          <br />
+          <% if(entry.date) { %> (<%= entry.date %>) <% } %>
+        </p>
       </section>
       <div class="editdelete">
         <% if(currentUser) {%>

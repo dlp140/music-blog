@@ -53,7 +53,7 @@ a {
   opacity: 1;
   pointer-events: auto;
 }
-textarea.new {
+textarea {
   resize: none;
   width: 30em;
   height: 15em;

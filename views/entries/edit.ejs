@@ -9,17 +9,67 @@
   <body>
     <%- include('../partials/nav.ejs') %>
     <header>
-      <h1>Edit <%= entry.album %>'s Info</h1>
+      <h1 class="edit">Editing:</h1>
     </header>
     <main>
-      <h2>Album Attributes:</h2>
+      <h2><%= entry.album %></h2>
       <form action="/entries/<%= entry._id %>?_method=PUT" method="POST">
+        Artist:
+        <br />
+        <input
+          type="text"
+          name="artist"
+          value="<%= entry.artist %>"
+          size="30"
+          readonly
+        />
+        <br />
+        Album:
+        <br />
+        <input
+          type="text"
+          name="album"
+          value="<%= entry.album %>"
+          size="30"
+          readonly
+        />
+        <br />
+        Cover:
+        <br />
+        <input
+          type="text"
+          name="img"
+          value="<%= entry.img %>"
+          size="30"
+          readonly
+        />
+        <br />
+        Year Released:
+        <br />
+        <input
+          type="number"
+          name="year"
+          value="<%= entry.year %>"
+          size="30"
+          readonly
+        />
+        <br />
+        Username:
+        <br />
+        <input type="text" name="user" value="<%= entry.user %>" size="30" />
+        <br />
+        Comments:
+        <br />
         <textarea
           type="text"
           name="comments"
           value="<%= entry.comments %>"
         ></textarea
         ><br />
+        Date submitted:
+        <br />
+        <input type="date" name="date" /> <br />
+        <br />
         <% if(currentUser) { %>
         <input type="submit" value="Update Entry" />
         <% } %>
