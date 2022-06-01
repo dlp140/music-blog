@@ -58,12 +58,13 @@ h1.entries {
   display: grid;
   height: 100vh;
   grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: 0.25fr 1fr 1.5fr 0.25fr;
+  grid-template-rows: 0.2fr 0.2fr 1.5fr 0.25fr;
   grid-template-areas:
     "nav nav"
     "title title"
     "image comments"
     "buttons comments";
+  grid-gap: 0.2rem;
 }
 .newsession,
 .newuser {
@@ -82,6 +83,8 @@ h1.newuser {
 
 #title {
   grid-area: title;
+  display: flex;
+  flex-direction: column;
 }
 
 #image {
@@ -93,5 +96,11 @@ h1.newuser {
 }
 
 #comments {
+  display: flex;
+  flex-direction: column;
   grid-area: comments;
+  align-items: flex-start;
+  text-justify: left;
+  margin-top: -38px;
+  margin-left: 10px;
 }
