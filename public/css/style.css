@@ -77,6 +77,9 @@ h1.newsession,
 h1.newuser {
   text-align: center;
 }
+.newentry {
+  margin-left: 10px;
+}
 #nav {
   grid-area: nav;
 }
@@ -105,7 +108,10 @@ h1.newuser {
   margin-left: 10px;
 }
 
-@media only screen and (max-width: 550px) {
+@media screen and (max-width: 550px) {
+  body {
+    background-color: aqua;
+  }
   .container {
     grid-template-columns: 1fr;
     grid-template-rows: 0.25fr 0.5fr 0.5fr 1fr 1fr;
@@ -115,5 +121,8 @@ h1.newuser {
       "image"
       "comments"
       "buttons";
+  }
+  #comments {
+    margin-top: 0px;
   }
 }

@@ -3,7 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title><%= entry.artist %>: <%= entry.album %> (<%=entry.year%>)</title>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/public/css/style.css" />
   </head>
 
@@ -27,12 +32,12 @@
         <% if(currentUser) {%>
         <section>
           <form action="/entries/<%= entry._id %>/edit">
-            <input type="submit" value="Edit Entry" />
+            <input class="btn btn-warning" type="submit" value="Edit Entry" />
           </form>
         </section>
         <section>
           <form action="/entries/<%= entry._id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Entry" />
+            <input class="btn btn-danger" type="submit" value="Delete Entry" />
           </form>
           <% } %>
         </section>
