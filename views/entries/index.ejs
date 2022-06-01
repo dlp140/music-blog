@@ -5,53 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recent Entries</title>
-    <style>
-      img {
-        max-width: 250px;
-        max-height: auto;
-        opacity: 80%;
-        border: solid black 1px;
-      }
-      img:hover {
-        opacity: 100%;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        background-color: #edeef6;
-        /* display: flex;
-        align-items: center;
-        justify-content: center; */
-        min-height: 100vh;
-      }
-      .modal-container {
-        opacity: 0;
-        pointer-events: none;
-        background-color: rgba(0, 0, 0, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vw;
-      }
-      .modal {
-        background-color: white;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        padding: 30px 50px;
-        width: 600px;
-        max-width: 100%;
-        text-align: center;
-      }
-      .modal-container.show {
-        opacity: 1;
-        pointer-events: auto;
-      }
-    </style>
+    <link rel="stylesheet" href="/public/css/style.css" />
     <script src="../public/javascript/modal.js" defer></script>
   </head>
   <body>
@@ -60,14 +14,12 @@
     <main>
       <h1>List of Entries</h1>
       <% for(let i = 0; i < entries.length; i++){ %>
-      <!-- <a href="/entries/<%= entries[i]._id %>"> -->
-      <img
-        id="open"
-        src="<%= entries[i].img %>"
-        title="<%= entries[i].artist %> - <%= entries[i].album %>"
-        alt="<%= entries[i].artist %> - <%= entries[i].album %>"
-      />
-      <!-- </a> -->
+      <a href="/entries/<%= entries[i]._id %>">
+        <img
+          src="<%= entries[i].img %>"
+          title="<%= entries[i].artist %>  <%= entries[i].album %>"
+          alt="<%= entries[i].artist %>  <%= entries[i].album %>"
+      /></a>
       <div class="modal-container" id="modal_container">
         <div class="modal">
           <h2><%= entries[i].artist %></h2>

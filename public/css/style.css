@@ -1,0 +1,53 @@
+img {
+  max-width: 250px;
+  max-height: auto;
+  opacity: 80%;
+  border: solid black 1px;
+}
+img:hover {
+  opacity: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #edeef6;
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+.modal-container {
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+}
+.modal {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px 50px;
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
+}
+.modal-container.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+textarea.new {
+  resize: none;
+  width: 30em;
+  height: 15em;
+}

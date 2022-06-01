@@ -3,12 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Foggy Dog Music Blog</title>
-    <style>
-      textarea {
-        width: 30em;
-        height: 15em;
-      }
-    </style>
+    <link rel="stylesheet" href="/public/css/style.css">
   </head>
 
   <body>
@@ -23,8 +18,8 @@
         Cover: <br /><input type="url" name="img" /><br />
         Year Released: <br /><input type="number" name="year" required/><br />
         Username: <br /><input type="text" name="user" required/><br />
-        Comments: <br /><textarea name="comments" required></textarea><br />
-        <input type="text" name="date" onfocus="(this.type='date')"/> <br>
+        Comments: <br /><textarea class='new' name="comments" required></textarea><br />
+        <input type="date" name="date"/> <br>
         <br>
         <input type="submit" value="Create Entry" /><br />
       </form>
