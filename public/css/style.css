@@ -1,12 +1,13 @@
 img {
   max-width: 250px;
   max-height: auto;
-  opacity: 80%;
+  opacity: 90%;
   border: solid black 1px;
   margin-left: 5px;
 }
 img:hover {
   opacity: 100%;
+  border: solid black 2px;
 }
 img.show {
   opacity: 100%;
@@ -21,8 +22,9 @@ body {
   /* display: flex;
     align-items: center;
     justify-content: center; */
-  min-height: 100vh;
-  margin: auto;
+  /* min-height: 100vh; */
+  /* max-width: 100vw; */
+  /* margin: auto; */
 }
 a {
   text-decoration: none;
@@ -76,11 +78,21 @@ h1.entries {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr;
 }
 #right {
   margin-top: 130px;
   /* margin: auto; */
   text-align: justify;
   margin-right: 10px;
+}
+.newsession,
+.newuser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+h1.newsession,
+h1.newuser {
+  text-align: center;
 }
