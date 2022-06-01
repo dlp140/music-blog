@@ -108,7 +108,7 @@ h1.newuser {
   margin-left: 10px;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 1000px) {
   body {
     background-color: aqua;
   }
