@@ -8,29 +8,22 @@
   </head>
 
   <body>
-    <header><%- include('../partials/nav.ejs') %></header>
     <main class="container">
-      <div id="left">
+      <div id="nav">
+        <header><%- include('../partials/nav.ejs') %></header>
+      </div>
+      <div id="title">
         <h1>
           <strong><%= entry.artist %></strong>
         </h1>
         <h2><em><%= entry.album %></em></h2>
         <h3>(<%= entry.year %>)</h3>
-
+      </div>
+      <div id="image">
         <!-- <h2>Attributes:</h2> -->
         <img class="show" src="<%= entry.img %>" />
       </div>
-      <div id="right">
-        <br />
-        <p><%= entry.comments %></p>
-        <br />
-        <p>
-          - <%= entry.user %> <br />
-          <br />
-          <% if(entry.date) { %> (<%= entry.date %>) <% } %>
-        </p>
-      </div>
-      <div class="editdelete">
+      <div id="buttons" class="editdelete">
         <% if(currentUser) {%>
         <section>
           <form action="/entries/<%= entry._id %>/edit">
@@ -43,6 +36,16 @@
           </form>
           <% } %>
         </section>
+      </div>
+      <div id="comments">
+        <br />
+        <p><%= entry.comments %></p>
+        <br />
+        <p>
+          - <%= entry.user %> <br />
+          <br />
+          <% if(entry.date) { %> (<%= entry.date %>) <% } %>
+        </p>
       </div>
     </main>
   </body>
