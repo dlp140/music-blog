@@ -32,12 +32,22 @@
         <% if(currentUser) {%>
         <section>
           <form action="/entries/<%= entry._id %>/edit">
-            <input class="btn btn-warning" type="submit" value="Edit Entry" />
+            <input
+              id="edit"
+              class="btn btn-warning"
+              type="submit"
+              value="Edit Entry"
+            />
           </form>
         </section>
         <section>
           <form action="/entries/<%= entry._id %>?_method=DELETE" method="POST">
-            <input class="btn btn-danger" type="submit" value="Delete Entry" />
+            <input
+              id="delete"
+              class="btn btn-danger"
+              type="submit"
+              value="Delete Entry"
+            />
           </form>
           <% } %>
         </section>

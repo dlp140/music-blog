@@ -107,11 +107,10 @@ h1.newuser {
   margin-top: -38px;
   margin-left: 10px;
 }
-
+#delete {
+  margin-left: 5px;
+}
 @media screen and (max-width: 1000px) {
-  body {
-    background-color: aqua;
-  }
   .container {
     grid-template-columns: 1fr;
     grid-template-rows: 0.25fr 0.5fr 0.5fr 1fr 1fr;
@@ -121,8 +120,13 @@ h1.newuser {
       "image"
       "comments"
       "buttons";
+
+    margin: 0;
   }
   #comments {
     margin-top: 0px;
+  }
+  #nav {
+    margin-left: -10px;
   }
 }
