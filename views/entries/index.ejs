@@ -12,25 +12,28 @@
     <%- include('../partials/nav.ejs') %>
 
     <main>
-      <h1>List of Entries</h1>
-      <% for(let i = 0; i < entries.length; i++){ %>
-      <a href="/entries/<%= entries[i]._id %>">
-        <img
-          src="<%= entries[i].img %>"
-          title="<%= entries[i].artist %>  <%= entries[i].album %>"
-          alt="<%= entries[i].artist %>  <%= entries[i].album %>"
-      /></a>
-      <div class="modal-container" id="modal_container">
-        <div class="modal">
-          <h2><%= entries[i].artist %></h2>
-          <p><%= entries[i].comments %></p>
-          <a href="/entries/<%= entries[i]._id %>">See more...</a>
-          <br />
-          <br />
-          <button id="close">Close</button>
+      <h1 class="entries">List of Entries</h1>
+      <div class="entries">
+        <% for(let i = 0; i < entries.length; i++){ %>
+        <a href="/entries/<%= entries[i]._id %>">
+          <img
+            src="<%= entries[i].img %>"
+            title="<%= entries[i].artist %>  <%= entries[i].album %>"
+            alt="<%= entries[i].artist %>  <%= entries[i].album %>"
+        /></a>
+
+        <div class="modal-container" id="modal_container">
+          <div class="modal">
+            <h2><%= entries[i].artist %></h2>
+            <p><%= entries[i].comments %></p>
+            <a href="/entries/<%= entries[i]._id %>">See more...</a>
+            <br />
+            <br />
+            <button id="close">Close</button>
+          </div>
         </div>
+        <% } %>
       </div>
-      <% } %>
       <!-- <button id="open">OPEN</button> -->
     </main>
   </body>

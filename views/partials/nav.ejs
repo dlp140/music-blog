@@ -1,13 +1,44 @@
+<style>
+  nav {
+    padding: 30px 30px 30px 30px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #edeef6;
+  }
+  input.nav {
+    background-color: green;
+    width: 33vw;
+    color: white;
+    border: solid black 1px;
+    /* border-radius: 5px; */
+    padding: 30px 30px 30px 30px;
+    margin: 0;
+  }
+  .nav:hover {
+    background-color: blue;
+    transition: 0.8s;
+  }
+</style>
 <nav>
   <% if(currentUser) { %>
-  <a href="/entries">Home</a>
-  <a href="/entries/new">New Entry</a>
+  <form action="/entries">
+    <input class="nav" type="submit" value="HOME" />
+  </form>
+  <form action="/entries/new">
+    <input class="nav" type="submit" value="NEW ENTRY" />
+  </form>
   <form action="/sessions?_method=DELETE" method="POST">
-    <input type="submit" value="Log Out" />
+    <input class="nav" type="submit" value="LOG OUT" />
   </form>
   <% } else { %>
-  <a href="/entries">Home</a>
-  <a href="/users/new">Register</a>
-  <a href="/sessions/new">Login</a>
+  <form action="/entries">
+    <input class="nav" type="submit" value="HOME" />
+  </form>
+  <form action="/users/new">
+    <input class="nav" type="submit" value="REGISTER" />
+  </form>
+  <form action="/sessions/new">
+    <input class="nav" type="submit" value="LOGIN" />
+  </form>
   <% } %>
 </nav>

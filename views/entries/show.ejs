@@ -23,18 +23,20 @@
         <br />
         <p>- <%= entry.user %></p>
       </section>
-
-      <% if(currentUser) {%>
-      <section>
-        <a href="/entries/<%= entry._id %>/edit">Edit</a>
-      </section>
-
-      <section>
-        <form action="/entries/<%= entry._id %>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete Entry" />
-        </form>
-        <% } %>
-      </section>
+      <div class="editdelete">
+        <% if(currentUser) {%>
+        <section>
+          <form action="/entries/<%= entry._id %>/edit">
+            <input type="submit" value="Edit Entry" />
+          </form>
+        </section>
+        <section>
+          <form action="/entries/<%= entry._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Entry" />
+          </form>
+          <% } %>
+        </section>
+      </div>
     </main>
   </body>
 </html>
