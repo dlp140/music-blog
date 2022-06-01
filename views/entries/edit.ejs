@@ -19,7 +19,9 @@
           value="<%= entry.comments %>"
         ></textarea
         ><br />
+        <% if(currentUser) { %>
         <input type="submit" value="Update Entry" />
+        <% } %>
       </form>
     </main>
   </body>

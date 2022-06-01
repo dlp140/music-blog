@@ -21,6 +21,7 @@ db.on("disconnected", () => console.log(`mongo disconnected`));
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use("/public", express.static("public"));
 app.use(
   session({
     secret: process.env.SECRET,

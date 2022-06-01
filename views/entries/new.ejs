@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Foggy Dog Music Blog</title>
+    <style>
+      textarea {
+        width: 30em;
+        height: 15em;
+      }
+    </style>
   </head>
 
   <body>
@@ -12,12 +18,14 @@
     <main>
         <h1>Create an Entry</h1>
       <form action="/entries" method="POST">
-        Artist: <br /><input type="text" name="artist" /><br />
-        Album: <br /><input type="text" name="album" /><br />
+        Artist: <br /><input type="text" name="artist" required/><br />
+        Album: <br /><input type="text" name="album" required/><br />
         Cover: <br /><input type="url" name="img" /><br />
-        Year Released: <br /><input type="number" name="year" /><br />
-        Username: <br /><input type="text" name="user" /><br />
-        Comments: <br /><textarea name="comments"></textarea><br />
+        Year Released: <br /><input type="number" name="year" required/><br />
+        Username: <br /><input type="text" name="user" required/><br />
+        Comments: <br /><textarea name="comments" required></textarea><br />
+        <input type="text" name="date" onfocus="(this.type='date')"/> <br>
+        <br>
         <input type="submit" value="Create Entry" /><br />
       </form>
     </main>
