@@ -53,18 +53,16 @@
           size="30"
           readonly
         />
-        <br />
-        Username:
-        <br />
-        <input type="text" name="user" value="<%= entry.user %>" size="30" />
+        <input
+          type="hidden"
+          type="text"
+          name="user"
+          value="<%= entry.user %>"
+        />
         <br />
         Comments:
         <br />
-        <textarea
-          type="text"
-          name="comments"
-          value="<%= entry.comments %>"
-        ></textarea
+        <textarea type="text" name="comments"><%= entry.comments %></textarea
         ><br />
         Date submitted:
         <br />
