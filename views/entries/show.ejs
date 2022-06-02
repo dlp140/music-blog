@@ -29,7 +29,7 @@
         <img class="show" src="<%= entry.img %>" />
       </div>
       <div id="buttons" class="editdelete">
-        <% if(currentUser) { if(currentUser.username = entry.username) { %>
+        <% if(currentUser) { if(currentUser.username === entry.username) { %>
         <section>
           <form action="/entries/<%= entry._id %>/edit">
             <input

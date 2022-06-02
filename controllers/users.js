@@ -20,7 +20,8 @@ userRouter.post("/", (req, res) => {
   );
 
   User.create(req.body, (error, createdUser) => {
-    res.redirect("/");
+    res.redirect("/entries");
+    console.log(req.body);
   });
 });
 

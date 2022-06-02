@@ -23,7 +23,7 @@ sessionsRouter.post("/", (req, res) => {
   // Check for an existing user
   User.findOne(
     {
-      username: req.body.username,
+      email: req.body.email,
     },
     (error, foundUser) => {
       // send error message if no user is found

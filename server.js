@@ -19,6 +19,8 @@ db.on("connected", () => console.log(`mongo connected`));
 db.on("disconnected", () => console.log(`mongo disconnected`));
 
 // Middleware
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: process.env.SECRET,
@@ -26,8 +28,6 @@ app.use(
     saveUninitialized: false,
   })
 );
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
 app.use("/public", express.static("public"));
 
 // Routes / Controllers
