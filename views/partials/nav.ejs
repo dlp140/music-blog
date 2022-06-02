@@ -27,7 +27,11 @@
     <input class="nav" type="submit" value="NEW ENTRY" />
   </form>
   <form action="/sessions?_method=DELETE" method="POST">
-    <input class="nav" type="submit" value="LOG OUT" />
+    <input
+      class="nav"
+      type="submit"
+      value="LOG OUT (<%= currentUser.username %>)"
+    />
   </form>
   <% } else { %>
   <form action="/entries">

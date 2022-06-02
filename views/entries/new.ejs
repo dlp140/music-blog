@@ -23,9 +23,10 @@
         Album: <br /><input type="text" name="album" required/><br />
         Cover: <br /><input type="url" name="img" /><br />
         Year Released: <br /><input type="number" name="year" required/><br />
-        Username: <br /><input type="text" name="user" required/><br />
+        Name: <br /><input type="text" name="name" required/><br />
         Comments: <br /><textarea class='new' name="comments" required></textarea><br />
         Date Submitted: <input type="date" name="date"/> <br>
+        <input type="text" name="username" value="<%=currentUser.username%>"
         <br>
         <input class="btn btn-success" type="submit" value="Create Entry" /><br />
       </form>

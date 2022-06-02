@@ -5,9 +5,10 @@ const entrySchema = new mongoose.Schema({
   album: { type: String, required: true },
   img: { type: String },
   year: { type: Number },
-  user: { type: String },
+  name: { type: String },
   comments: { type: String, required: true },
   date: { type: Date },
+  username: { type: String },
 });
 
 const Entry = mongoose.model("Entry", entrySchema);
