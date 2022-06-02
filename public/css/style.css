@@ -3,6 +3,8 @@ img {
   max-height: auto;
   opacity: 90%;
   border: solid black 1px;
+  margin-bottom: 2px;
+  margin-left: 2px;
 }
 img:hover {
   opacity: 100%;

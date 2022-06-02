@@ -27,7 +27,7 @@
         Comments: <br /><textarea class='new' name="comments" required></textarea><br />
         Date Submitted: <input type="date" name="date"/> <br>
         <% if(currentUser) { %>
-        <input type="text" name="user" value="<%=currentUser.email%>" readonly>
+        <input type='hidden' type="text" name="user" value="<%=currentUser.email%>">
         <% } %>
         <br>
         <input class="btn btn-success" type="submit" value="Create Entry" /><br />
