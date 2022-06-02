@@ -8,6 +8,7 @@ const entrySchema = new mongoose.Schema({
   name: { type: String },
   comments: { type: String, required: true },
   date: { type: Date },
+  user: { type: String },
 });
 
 const Entry = mongoose.model("Entry", entrySchema);

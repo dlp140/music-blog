@@ -29,7 +29,7 @@
         <img class="show" src="<%= entry.img %>" />
       </div>
       <div id="buttons" class="editdelete">
-        <% if(currentUser) { if(currentUser.username === entry.username) { %>
+        <% if(currentUser) { if(currentUser.email === entry.user) { %>
         <section>
           <form action="/entries/<%= entry._id %>/edit">
             <input
@@ -57,7 +57,7 @@
         <p><%= entry.comments %></p>
         <br />
         <p>
-          - <%= entry.user %> <br />
+          - <%= entry.name %> <br />
           <br />
           <% if(entry.date) { %> (<%= entry.date %>) <% } %>
         </p>
@@ -65,3 +65,4 @@
     </main>
   </body>
 </html>
+<% console.log(currentUser.email) %> <% console.log(entry.user) %>
