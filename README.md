@@ -43,4 +43,4 @@ Users are able to read any previous contributions. If the user has registered an
 
 ## Deployed Link
 
-- https://foggy-dog-music-blog.herokuapp.com/
+- <a href='https://foggy-dog-music-blog.herokuapp.com/' target="_blank">Foggy Dog Music Blog</a>
