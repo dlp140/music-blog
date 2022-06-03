@@ -6,16 +6,29 @@
     background-color: #edeef6;
   }
   input.nav {
-    background-color: green;
+    background-color: #edeef6;
     width: 33vw;
-    color: white;
+    color: black;
     border: solid black 1px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     padding: 30px 30px 30px 30px;
   }
   .nav:hover {
-    background-color: blue;
+    background-color: lightblue;
+    color: black;
     transition: 0.8s;
+    box-shadow: 2px 2px;
+    font-size: larger;
+  }
+  #newentry:hover,
+  #login:hover {
+    background-color: lightgreen;
+  }
+  #logout:hover {
+    background-color: lightcoral;
+  }
+  #register:hover {
+    background-color: lightgoldenrodyellow;
   }
 </style>
 <nav>
@@ -24,10 +37,11 @@
     <input class="nav" type="submit" value="HOME" />
   </form>
   <form action="/entries/new">
-    <input class="nav" type="submit" value="NEW ENTRY" />
+    <input id="newentry" class="nav" type="submit" value="NEW ENTRY" />
   </form>
   <form action="/sessions?_method=DELETE" method="POST">
     <input
+      id="logout"
       class="nav"
       type="submit"
       value="LOG OUT (<%= currentUser.email %>)"
@@ -38,10 +52,10 @@
     <input class="nav" type="submit" value="HOME" />
   </form>
   <form action="/users/new">
-    <input class="nav" type="submit" value="REGISTER" />
+    <input id="register" class="nav" type="submit" value="REGISTER" />
   </form>
   <form action="/sessions/new">
-    <input class="nav" type="submit" value="LOGIN" />
+    <input id="login" class="nav" type="submit" value="LOGIN" />
   </form>
   <% } %>
 </nav>
