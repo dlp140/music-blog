@@ -17,7 +17,7 @@
     <%- include('../partials/nav.ejs') %>
 
     <main>
-      <h1 class="entries">List of Entries</h1>
+      <h1 class="entries">Previous Entries</h1>
       <div class="entries">
         <% for(let i = 0; i < entries.length; i++){ %>
         <a href="/entries/<%= entries[i]._id %>">

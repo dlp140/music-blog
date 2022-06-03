@@ -34,14 +34,14 @@ router.delete("/:id", (req, res) => {
 // U
 router.put("/:id", (req, res) => {
   Entry.findByIdAndUpdate(req.params.id, req.body, () => {
-    res.redirect("/entries/");
+    res.redirect(`/entries/${req.params.id}`);
   });
 });
 
 // C
 router.post("/", (req, res) => {
   Entry.create(req.body, (err, createdEntry) => {
-    res.redirect("/entries");
+    res.redirect(`/entries/`);
   });
 });
 

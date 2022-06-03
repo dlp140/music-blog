@@ -13,8 +13,8 @@ img:hover {
 img.show {
   opacity: 100%;
   border: solid black 1px;
-  max-width: 500px;
-  min-width: 500px;
+  max-width: 750px;
+  min-width: 750px;
 }
 * {
   box-sizing: border-box;
@@ -108,8 +108,8 @@ h1.newuser {
   flex-direction: column;
   grid-area: comments;
   align-items: flex-start;
-  text-justify: left;
-  margin-top: -38px;
+  text-justify: right;
+  margin-top: -30px;
   margin-left: 10px;
 }
 #delete {
@@ -164,6 +164,7 @@ legend {
   }
   #comments {
     margin-top: 0px;
+    font-size: 20px;
   }
   #nav {
     margin-left: -10px;
