@@ -37,6 +37,7 @@ Users are able to read any previous contributions. If the user has registered an
 ## Project's Future
 
 - Users will be able to pin or favorite specific contributions
+- Dashboard view for users to see their contributions and their favorite posts
 - Multiple contributions related to the same album will be consolidated onto a single page
 - API call to third-party site to retrieve album information for user
 
