@@ -13,8 +13,8 @@ img:hover {
 img.show {
   opacity: 100%;
   border: solid black 1px;
-  max-width: 750px;
-  min-width: 750px;
+  max-width: 600px;
+  min-width: 600px;
 }
 * {
   box-sizing: border-box;

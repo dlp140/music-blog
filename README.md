@@ -2,10 +2,7 @@
 
 #### An full-stack, full-CRUD web application for users to create, read, update, and delete album reviews.
 
-<img src='./images/Initial.png' alt='Initial Page'>
-<img src='./images/Loaded.png' alt='Loaded Data'>
-<img src='./images/SmallMobileInitial.png' alt='Intial Mobile Page'>
-<img src='./images/SmallMobileLoaded.png' alt='Loaded Mobile Page'>
+<img src='./media/images/show.png' alt='Show Page'>
 
 ## Description
 
