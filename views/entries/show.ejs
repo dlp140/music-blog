@@ -25,7 +25,6 @@
         <h3>(<%= entry.year %>)</h3>
       </div>
       <div id="image">
-        <!-- <h2>Attributes:</h2> -->
         <img class="show" src="<%= entry.img %>" />
       </div>
       <div id="buttons" class="editdelete">
@@ -57,7 +56,9 @@
         <p><%= entry.comments %></p>
         <br />
         <p>
-          - <%= entry.name %> <br />
+          - <%= entry.name %> <% if(currentUser) { if (currentUser.email ===
+          entry.user) { %> (you) <% }} %>
+          <br />
           <br />
           <% if(entry.date) { %> (<%= entry.date %>) <% } %>
         </p>

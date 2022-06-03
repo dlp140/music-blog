@@ -2,76 +2,104 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Express Blog</title>
+    <title>Edit: <%= entry.album %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="/public/css/style.css" />
+    <style>
+      .editsidebar {
+        width: 100%;
+        background: url("<%= entry.img %>");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px 0 0 10px;
+      }
+    </style>
   </head>
 
   <body>
     <%- include('../partials/nav.ejs') %>
-    <header>
-      <h1 class="edit">Editing:</h1>
-    </header>
-    <main>
-      <h2><%= entry.album %></h2>
-      <form action="/entries/<%= entry._id %>?_method=PUT" method="POST">
-        Artist:
-        <br />
-        <input
-          type="text"
-          name="artist"
-          value="<%= entry.artist %>"
-          size="30"
-          readonly
-        />
-        <br />
-        Album:
-        <br />
-        <input
-          type="text"
-          name="album"
-          value="<%= entry.album %>"
-          size="30"
-          readonly
-        />
-        <br />
-        Cover:
-        <br />
-        <input
-          type="text"
-          name="img"
-          value="<%= entry.img %>"
-          size="30"
-          readonly
-        />
-        <br />
-        Year Released:
-        <br />
-        <input
-          type="number"
-          name="year"
-          value="<%= entry.year %>"
-          size="30"
-          readonly
-        />
-        <input
-          type="hidden"
-          type="text"
-          name="user"
-          value="<%= entry.user %>"
-        />
-        <br />
-        Comments:
-        <br />
-        <textarea type="text" name="comments"><%= entry.comments %></textarea
-        ><br />
-        Date submitted:
-        <br />
-        <input type="date" name="date" /> <br />
-        <br />
-        <% if(currentUser) { %>
-        <input type="submit" value="Update Entry" />
-        <% } %>
-      </form>
-    </main>
+    <div class="editcontainer">
+      <div class="editsidebar"></div>
+      <div class="editform">
+        <h1 class="editentry">Editing:</h1>
+
+        <main class="editentry">
+          <h2><%= entry.album %></h2>
+          <form action="/entries/<%= entry._id %>?_method=PUT" method="POST">
+            <fieldset>
+              <legend>Album Information</legend>
+              Artist:
+              <br />
+              <input
+                type="text"
+                name="artist"
+                value="<%= entry.artist %>"
+                size="30"
+                readonly
+              />
+              <br />
+              Album:
+              <br />
+              <input
+                type="text"
+                name="album"
+                value="<%= entry.album %>"
+                size="30"
+                readonly
+              />
+              <br />
+              Cover:
+              <br />
+              <input
+                type="text"
+                name="img"
+                value="<%= entry.img %>"
+                size="30"
+                readonly
+              />
+              <br />
+              Year Released:
+              <br />
+              <input
+                type="number"
+                name="year"
+                value="<%= entry.year %>"
+                size="30"
+                readonly
+              />
+              <input
+                type="hidden"
+                type="text"
+                name="user"
+                value="<%= entry.user %>"
+              />
+              <br />
+            </fieldset>
+            <fieldset>
+              <legend>Your Comments</legend>
+              Comments:
+              <br />
+              <textarea type="text" name="comments">
+<%= entry.comments %></textarea
+              ><br />
+              Date submitted:
+              <br />
+              <input type="date" name="date" /> <br />
+              <br />
+              <% if(currentUser) { %>
+            </fieldset>
+
+            <input class="btn btn-success" type="submit" value="Update Entry" />
+
+            <% } %>
+          </form>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

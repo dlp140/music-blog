@@ -10,28 +10,51 @@
     crossorigin="anonymous"
   />
     <link rel="stylesheet" href="/public/css/style.css">
+    <style>
+      .newsidebar {
+        width: 50%;
+        background: url("https://i.imgur.com/ADqDF03.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px 0 0 10px;
+      }
+    </style>
   </head>
 
   <body>
     <header></header>
     <%- include('../partials/nav.ejs') %>
     </header>
+    <div class="newcontainer">
+      <div class="newsidebar"></div>
+      <div class="newform">
     <main class="newentry">
         <h1>Create an Entry</h1>
+        <fieldset>
+          <legend>Album Information</legend>
       <form action="/entries" method="POST">
         Artist: <br /><input type="text" name="artist" required/><br />
         Album: <br /><input type="text" name="album" required/><br />
-        Cover: <br /><input type="url" name="img" /><br />
+        Cover Image URL: <br /><input type="url" name="img" /><br />
         Year Released: <br /><input type="number" name="year" required/><br />
-        Name: <br /><input type="text" name="name" required/><br />
+      </fieldset>
+      <fieldset>
+        <legend>Your Information</legend>
+        Your Name: <br /><input type="text" name="name" required/><br />
         Comments: <br /><textarea class='new' name="comments" required></textarea><br />
         Date Submitted: <input type="date" name="date"/> <br>
         <% if(currentUser) { %>
         <input type='hidden' type="text" name="user" value="<%=currentUser.email%>">
         <% } %>
         <br>
+      </fieldset>
+        <% if (currentUser) { %>
         <input class="btn btn-success" type="submit" value="Create Entry" /><br />
+        <% } %>
       </form>
     </main>
+  </div>
+  </div>
   </body>
 </html>

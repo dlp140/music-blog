@@ -34,7 +34,7 @@ router.delete("/:id", (req, res) => {
 // U
 router.put("/:id", (req, res) => {
   Entry.findByIdAndUpdate(req.params.id, req.body, () => {
-    res.redirect("/entries");
+    res.redirect("/entries/show.ejs");
   });
 });
 

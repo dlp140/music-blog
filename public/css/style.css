@@ -1,5 +1,5 @@
 img {
-  max-width: 250px;
+  max-width: 300px;
   max-height: auto;
   opacity: 90%;
   border: solid black 1px;
@@ -13,6 +13,8 @@ img:hover {
 img.show {
   opacity: 100%;
   border: solid black 1px;
+  max-width: 500px;
+  min-width: 500px;
 }
 * {
   box-sizing: border-box;
@@ -79,7 +81,8 @@ h1.newsession,
 h1.newuser {
   text-align: center;
 }
-.newentry {
+.newentry,
+.editentry {
   margin-left: 10px;
 }
 #nav {
@@ -111,6 +114,40 @@ h1.newuser {
 }
 #delete {
   margin-left: 5px;
+}
+#landing {
+  text-align: center;
+}
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+legend {
+  padding: 0px 10px;
+  font-weight: 500;
+  color: var(--purple);
+}
+.editcontainer,
+.newcontainer {
+  width: 85vw;
+  height: 50vw;
+  margin: 0px auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ddd, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
+    -1px 1px 10px #ddd;
+}
+
+.editform,
+.newform {
+  width: 50%;
+  background: #f9f9f9;
+  border-radius: 0 10px 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: auto;
 }
 @media screen and (max-width: 1000px) {
   .container {
