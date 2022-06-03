@@ -28,11 +28,11 @@ Users are able to read any previous contributions. If the user has registered an
 
 ## Wireframe
 
--
+- <a href='https://trello.com/b/S2Vh9DSH/project-2-music-blog'>Wireframe</a>
 
 ## Trello Planning
 
--
+- <a href='https://trello.com/b/S2Vh9DSH/project-2-music-blog'>Trello</a>
 
 ## Project's Future
 
