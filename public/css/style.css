@@ -149,6 +149,13 @@ legend {
   box-sizing: border-box;
   overflow: auto;
 }
+.landingphoto {
+  background-image: url("https://i.imgur.com/ADqDF03.jpg");
+  background-size: cover;
+  width: 99vw;
+  height: 80vh;
+  margin: auto 0;
+}
 @media screen and (max-width: 1000px) {
   .container {
     grid-template-columns: 1fr;
