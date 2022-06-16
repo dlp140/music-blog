@@ -1,6 +1,6 @@
 # Foggy Dog Music Blog
 
-#### An full-stack, full-CRUD web application for users to create, read, update, and delete album reviews.
+#### A full-CRUD web application for users to create, read, update, and delete album reviews.
 
 <img src='./media/images/show.png' alt='Show Page'>
 
